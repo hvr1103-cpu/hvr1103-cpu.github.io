@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery CRUD with Tag & Price Filtering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Filters</h2>
+            
+            <div class="filter-section">
+                <h3>Filter by Tag</h3>
+                <div class="filter-item active" data-tag="all">
+                    <i>📋</i> All Items
+                </div>
+                <div class="filter-item" data-tag="top">
+                    <i>👕</i> Top
+                </div>
+                <div class="filter-item" data-tag="bottom">
+                    <i>👖</i> Bottom
+                </div>
+                <div class="filter-item" data-tag="combo">
+                    <i>套装</i> Combo
+                </div>
+            </div>
+            
+            <div class="filter-section price-filter">
+                <h3>Price Range</h3>
+                <input type="range" min="0" max="200" value="200" class="price-range" id="priceRange">
+                <div class="price-values">
+                    <span>$0</span>
+                    <span id="priceValue">$200</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <h1>Product Gallery</h1>
+                <button class="btn" onclick="addItem()">+ Add New Item</button>
+            </header>
+            
+            <div class="gallery" id="gallery">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add/Edit Item Modal -->
+    <div class="modal" id="itemModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Add New Item</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="itemForm">
+                    <input type="hidden" id="itemId">
+                    <div class="form-group">
+                        <label for="itemName">Item Name *</label>
+                        <input type="text" id="itemName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Price ($) *</label>
+                        <input type="number" id="itemPrice" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemImage">Image Upload *</label>
+                        <input type="file" id="itemImage" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Available Colors *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorRed" value="Red">
+                                <label for="colorRed">Red</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorBlue" value="Blue">
+                                <label for="colorBlue">Blue</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorGreen" value="Green">
+                                <label for="colorGreen">Green</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorBlack" value="Black">
+                                <label for="colorBlack">Black</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="colorWhite" value="White">
+                                <label for="colorWhite">White</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Available Sizes</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sizeS" value="S">
+                                <label for="sizeS">S</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sizeM" value="M">
+                                <label for="sizeM">M</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sizeL" value="L">
+                                <label for="sizeL">L</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sizeXL" value="XL">
+                                <label for="sizeXL">XL</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tags *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="tagTop" value="top">
+                                <label for="tagTop">Top</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="tagBottom" value="bottom">
+                                <label for="tagBottom">Bottom</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="tagCombo" value="combo">
+                                <label for="tagCombo">Combo</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+                <button class="submit-btn" onclick="saveItem()">Save Item</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <h3>Delete Item</h3>
+            <p class="confirmation-message">Are you sure you want to delete this item?</p>
+            <div class="confirmation-buttons">
+                <button class="cancel-delete-btn" onclick="closeConfirmation()">Cancel</button>
+                <button class="confirm-btn" onclick="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

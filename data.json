@@ -1,0 +1,65 @@
+[
+    {
+        id: 1,
+        name: "Summer T-Shirt",
+        price: 24.99,
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        colors: ["Red", "Blue", "White"],
+        sizes: ["S", "M", "L"],
+        tags: ["top"]
+    },
+    {
+        id: 2,
+        name: "Denim Jeans",
+        price: 49.99,
+        image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        colors: ["Blue", "Black"],
+        sizes: ["M", "L", "XL"],
+        tags: ["bottom"]
+    },
+    {
+        id: 3,
+        name: "Casual Combo Set",
+        price: 69.99,
+        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        colors: ["White", "Black"],
+        sizes: ["S", "M", "L"],
+        tags: ["combo"]
+    },
+    {
+        id: 4,
+        name: "Polo Shirt",
+        price: 29.99,
+        image: "https://images.unsplash.com/photo-1529361136673-9d7e40a3a824?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        colors: ["Blue", "Green"],
+        sizes: ["M", "L"],
+        tags: ["top"]
+    },
+    {
+        id: 5,
+        name: "Shorts",
+        price: 34.99,
+        image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        colors: ["Black", "Blue"],
+        sizes: ["S", "M", "L"],
+        tags: ["bottom"]
+    },
+    {
+        id: 6,
+        name: "Winter Jacket",
+        price: 89.99,
+        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        colors: ["Black", "Blue"],
+        sizes: ["M", "L", "XL"],
+        tags: ["top"]
+    },
+    {
+        id: 7,
+        name: "Formal Pants",
+        price: 59.99,
+        image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        colors: ["Black", "Gray"],
+        sizes: ["S", "M", "L"],
+        tags: ["bottom"]
+    }
+]
