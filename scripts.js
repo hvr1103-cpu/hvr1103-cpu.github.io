@@ -5,8 +5,8 @@ let activeFilter = 'all';
 let maxPrice = 200;
 
 // Initialize the gallery
-document.addEventListener('DOMContentLoaded', function() {
-    items = getItemList();
+document.addEventListener('DOMContentLoaded', async function() {
+    items = await getItemList();
     renderGallery();
     setupFilterListeners();
     setupPriceSlider();
