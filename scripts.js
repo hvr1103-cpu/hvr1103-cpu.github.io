@@ -132,19 +132,11 @@ function editItem(id) {
 }
 
 // Get item list from DB
-function getItemList() {
-    fetch('data.json')
-    .then(response => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.json();
-    })
-    .then(data => {
-        console.log("Loaded JSON:", data);
-        // Do something with the data here
-    })
-    .catch(error => {
-        console.error("Failed to load JSON:", error);
-    });
+async function getItemList() {
+    const response = await fetch('data.json');
+    const data = await response.json();
+    console.log("Loaded JSON:", data);
+    return data;
 }
 
 // Close modal
