@@ -68,7 +68,7 @@ function renderGallery() {
             <img src="${item.image}" alt="${item.name}" class="card-img">
             <div class="card-content">
                 <h3 class="card-title">${item.name}</h3>
-                <div class="card-price">$${item.price.toFixed(2)}</div>
+                <div class="card-price">₱${item.price.toFixed(2)}</div>
                 <div class="card-details">
                     <div><strong>Colors:</strong> ${item.colors.join(', ')}</div>
                     <div><strong>Sizes:</strong> ${item.sizes.length > 0 ? item.sizes.join(', ') : 'Not specified'}</div>
