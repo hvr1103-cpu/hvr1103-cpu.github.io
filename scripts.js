@@ -2,7 +2,7 @@
 let items = [];
 let currentItemId = null;
 let activeFilter = 'all';
-let maxPrice = 200;
+let maxPrice = 2000;
 
 // Initialize the gallery
 document.addEventListener('DOMContentLoaded', async function() {
