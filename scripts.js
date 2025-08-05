@@ -39,7 +39,7 @@ function setupPriceSlider() {
     
     priceRange.addEventListener('input', function() {
         maxPrice = parseInt(this.value);
-        priceValue.textContent = `$${maxPrice}`;
+        priceValue.textContent = `₱${maxPrice}`;
         renderGallery();
     });
 }
