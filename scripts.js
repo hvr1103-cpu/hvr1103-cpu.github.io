@@ -47,10 +47,6 @@ function renderGallery() {
                     ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
             </div>
-            <div class="card-actions">
-                <button class="edit-btn" onclick="editItem('${id}')">Edit</button>
-                <button class="delete-btn" onclick="deleteItem('${id}')">Delete</button>
-            </div>
         `;
         gallery.appendChild(card);
     }
