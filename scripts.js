@@ -11,38 +11,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupPriceSlider();
 });
 
-// Set up filter click listeners
-function setupFilterListeners() {
-    const filterItems = document.querySelectorAll('.filter-item');
-    filterItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Remove active class from all items
-            filterItems.forEach(i => i.classList.remove('active'));
-            
-            // Add active class to clicked item
-            this.classList.add('active');
-            
-            // Get the tag from data attribute
-            activeFilter = this.getAttribute('data-tag');
-            
-            // Re-render gallery with filter
-            renderGallery();
-        });
-    });
-}
-
-// Set up price slider
-function setupPriceSlider() {
-    const priceRange = document.getElementById('priceRange');
-    const priceValue = document.getElementById('priceValue');
-    
-    priceRange.addEventListener('input', function() {
-        maxPrice = parseInt(this.value);
-        priceValue.textContent = `₱${maxPrice}`;
-        renderGallery();
-    });
-}
-
 // Render gallery items with filtering
 function renderGallery() {
     const gallery = document.getElementById('gallery');
@@ -93,4 +61,36 @@ async function getItemList() {
     const response = await fetch('data.json');
     const data = await response.json();
     return data;
+}
+
+// Set up filter click listeners
+function setupFilterListeners() {
+    const filterItems = document.querySelectorAll('.filter-item');
+    filterItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove active class from all items
+            filterItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get the tag from data attribute
+            activeFilter = this.getAttribute('data-tag');
+            
+            // Re-render gallery with filter
+            renderGallery();
+        });
+    });
+}
+
+// Set up price slider
+function setupPriceSlider() {
+    const priceRange = document.getElementById('priceRange');
+    const priceValue = document.getElementById('priceValue');
+    
+    priceRange.addEventListener('input', function() {
+        maxPrice = parseInt(this.value);
+        priceValue.textContent = `₱${maxPrice}`;
+        renderGallery();
+    });
 }
